@@ -146,21 +146,28 @@ public class Loops {
     int door = 0;
     int door1 = 0;
     int prize = 0;
+    
+    int total = 0;
+    double wins = 0;
+    double win = 0;
+    double total1 = 0;
     Random random = new Random();int rand = 0;
 
-    //This is for prize \/
-    rand = random.nextInt();
-    int test = rand%3; 
-    if(test==0){
-      prize = 1;
-    }else if(test==1||test==-1){
-      prize = 2;
-    }else if (test ==2||test==-2){
-      prize =3;
-    }
+    
 
-    // This is for prize /\
+    
+    // This is the door chosen\/
     for(int num = 1;num<n;num++){
+      //This is for prize \/
+      rand = random.nextInt();
+      int test = rand%3; 
+      if(test==0){
+        prize = 1;
+      }else if(test==1||test==-1){
+        prize = 2;
+      }else if (test ==2||test==-2){
+        prize =3;
+      }// This is for prize /\
       rand = random.nextInt();
       int text = rand%3;
       if(text==0){
@@ -170,8 +177,45 @@ public class Loops {
       }else if (text ==2||text==-2){
         door =3;
       }
-      System.out.println(rand+" with "+text+" and with "+door);
+      
+      //This is for the host chosen door\/ 
+
+      rand = random.nextInt();
+      text = rand%3;
+      if(text==0){
+        door1 = 1;
+      }else if(text==1||text==-1){
+        door1 = 2;
+      }else if (text ==2||text==-2){
+        door1 =3;
+      }
+      
+      //This is for if you win or not
+      if(door ==prize){
+        wins ++;
+        total = total +1;
+      }else{
+        total = total+1;
+      }
+      if(door1 ==prize){
+        win++;
+        total1 = total1 +1;
+      }else{
+        total1 = total1+1;
+      }
+      
     }
+    double winrate1 = (wins/total);
+    double winrate2 = (win/total1);
+    
+    if(wins>win){
+      System.out.println("Without choosing the second door, the first door you choose wins. With a win rate of "+winrate1+"% (in which you won "+wins+"), when the other one had "+winrate2+"%.(in which the host won "+win+")");
+    }else if (win>wins){
+      System.out.println("With choosing the second door, the second door the host choose wins. With a win rate of "+winrate2+"%, when the other one had "+winrate1+"%.");
+    }else{
+      System.out.println("It was a tie. Both had a winrate of "+winrate2+"%.");
+    }
+    
     
 
   }
@@ -180,12 +224,12 @@ public class Loops {
   public static void main(String[] args) {
 
     // testing of stati10 methods goes here
-    //nHellos(50);
-    //nRandom(15);
-    //System.out.println(isPrime(1000004807));
-    //getFactors(12);
-    //System.out.println(rollDie());
-    montyHallSimulation(5);
+    nHellos(50);
+    nRandom(15);
+    System.out.println(isPrime(1000004807));
+    getFactors(12);
+    System.out.println(rollDie());
+    montyHallSimulation(10);
     
 
   }
