@@ -52,7 +52,7 @@ public class Loops {
     int a = n;
     //total
     double b = 0;
-    //placeholder
+    
     double d = 0;
     for(int c =0;c<=a;c++){
       d= Math.random();
@@ -79,7 +79,7 @@ public class Loops {
     }
     return tf;
   }
-  // Really needs to be fixed
+  // Can not find what is wrong when it is printing out the answer in the list
   //this \/
   public static void getFactors(int n){
     int a = n;
@@ -125,7 +125,7 @@ public class Loops {
      System.out.println("Total is: "+ Arrays.toString(b));
   }
 
-  //Works but needs code to be changed \/
+  //Works but code might need to be changed \/
   public static int rollDie(){
     int a = 1/6;
     int b = (1/6)*(1/6);
@@ -134,12 +134,9 @@ public class Loops {
 
   }
  
-  //Need to be finished
+  
   /*To do:
-  //make the ai that chooses the door for the host
-  need to choose the door and keep it
-  make if the first door is better than the other
-  maybe more
+  //all done for the below
   
   */
   public static void montyHallSimulation(int n) {
